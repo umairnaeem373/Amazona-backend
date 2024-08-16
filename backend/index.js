@@ -19,12 +19,12 @@ app.use(cors())
 app.use(express.json())
 dotenv.config()
 
-// if(process.env.NODE_ENV==='development'){
-//     app.use(morgan('dev'))
-//   }   
+if(process.env.NODE_ENV==='development'){
+    app.use(morgan('dev'))
+  }   
 
 
-// connectDB(process.env.DB_URI)
+connectDB(process.env.DB_URI)
 
 app.get('/',(req,res)=>{
     res.json({message:'Hello World'})
@@ -32,23 +32,23 @@ app.get('/',(req,res)=>{
 
 
 
-// const __dirname = path.resolve()
+const __dirname = path.resolve()
 
-// app.use('/api/products',productRoutes)
-// app.use('/api/users',userRoutes)
-// app.use('/api/orders',orderRoutes)
-// app.get('/api/config/paypal',(req,res)=>{
-//     res.send(process.env.PAYPAL_CLIENT_ID)
-// })
+app.use('/api/products',productRoutes)
+app.use('/api/users',userRoutes)
+app.use('/api/orders',orderRoutes)
+app.get('/api/config/paypal',(req,res)=>{
+    res.send(process.env.PAYPAL_CLIENT_ID)
+})
 
-// app.use('/api/upload', uploadRoutes)
+app.use('/api/upload', uploadRoutes)
 
-// app.use('/uploads',express.static(path.join(__dirname,'/uploads')))
+app.use('/uploads',express.static(path.join(__dirname,'/uploads')))
 
-// app.use(notFound)
-// app.use(errorHandler)
+app.use(notFound)
+app.use(errorHandler)
 
-// const port = process.env.PORT || 5000
-// app.listen(port,()=>{
-//     console.log(`${process.env.NODE_ENV} is running on port ${port}`.rainbow.bold)
-// })
+const port = process.env.PORT || 5000
+app.listen(port,()=>{
+    console.log(`${process.env.NODE_ENV} is running on port ${port}`.rainbow.bold)
+})
