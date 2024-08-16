@@ -43,7 +43,7 @@ app.use('/uploads',express.static(path.join(__dirname,'/uploads')))
 app.use(notFound)
 app.use(errorHandler)
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 app.listen(port,()=>{
     console.log(`${process.env.NODE_ENV} is running on port ${port}`.rainbow.bold)
 })
