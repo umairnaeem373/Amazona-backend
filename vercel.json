@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "backend/(.*)",
-            "dest": "/"
+            "dest": "/$1"
         }
     ]
 }
