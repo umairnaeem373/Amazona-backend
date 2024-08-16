@@ -22,8 +22,10 @@ if(process.env.NODE_ENV==='development'){
 connectDB(process.env.DB_URI)
 
 app.get('/',(req,res)=>{
-    res.send('Hello World')
+    res.json({message:'Hello World'})
 })
+
+
 
 const __dirname = path.resolve()
 
