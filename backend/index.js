@@ -9,11 +9,9 @@ import { notFound , errorHandler } from './Middleware/errorMiddleware.js'
 import userRoutes from './Routes/userRoutes.js'
 import orderRoutes from './Routes/OrderRoutes.js'
 import morgan from 'morgan'
-import cors from "cors"
 
 const app=express()
 
-app.use(cors())
 
 
 app.use(express.json())
