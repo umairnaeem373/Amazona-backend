@@ -15,11 +15,13 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["*"],
+    origin: "https://umairnaeem373.github.io",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
+app.options("*", cors());
 
 app.use(express.json());
 dotenv.config();
