@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://umairnaeem373.github.io",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
